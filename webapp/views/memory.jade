@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	h1= title
+	#memories
+		div.memory
+			a(href="/memory/"+memory.title)!= memory.title
+			div.video= "video: " + memory.video
+			div.viz= "viz: " + memory.viz
+			div.joy= "joy: " + memory.joy 
+			div.joy= "sorrow: " + memory.sorrow 
+			video#day(autoplay=false)
+				source(src="../memories/"+memory.video, type='video/mp4')
