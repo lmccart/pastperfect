@@ -1,4 +1,7 @@
+
 extends layout
+
+
 
 block content
 	#memory
@@ -11,3 +14,7 @@ block content
 			source(src="../memories/"+memory.video, type='video/mp4')
 		video#viz(autoplay=false)
 			source(src="../memories/"+memory.viz, type='video/mp4')
+
+	a(href="/") 
+		div#logo
+			h1= "Past Perfect"
