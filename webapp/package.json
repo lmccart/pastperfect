@@ -1,6 +1,6 @@
 {
-  "name": "application-name",
-  "version": "0.0.1",
+  "name": "pastperfect",
+  "version": "0.0.1-10",
   "private": true,
   "scripts": {
     "start": "node app.js"
@@ -10,5 +10,9 @@
     "jade": "*",
     "stylus": "*",
     "mongodb": "*"
+  },
+  "subdomain": "pastperfect",
+  "engines": {
+    "node": "0.8.x"
   }
 }

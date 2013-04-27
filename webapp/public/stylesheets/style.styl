@@ -1,30 +1,91 @@
 body
-  padding: 50px
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
-  font-size 13px
-  text-align center
-  text-stroke 1px rgba(255, 255, 255, 0.1)
-  color #555
+  margin 0
+  padding 0
+  text-align left
+  font-family "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+  font-size 15px
+  color #606060
+  //background #ACACAC url('../images/background.png')
+  //background-repeat repeat-x
+  background -webkit-gradient(linear, 0% 0%, 0% 60%, from(#FFFFFF), to(#6F6767));
+
 a
-  color: #00B7FF
+  color #606060
+  text-decoration none
+
 h1, h2
   margin 0
   font-size 22px
   color #343434
+
 h1
-  text-shadow 1px 2px 2px #ddd
-  font-size 60px
-#memories
-  text-align left
+  font-size 70px
+  font-weight normal  
+  color #FFF
+  text-shadow 0 0 20px #FFF
+  text-align center
+  padding 50px
+
+#container
   margin-left auto
   margin-right auto
-  width 320px
-  .employee
-    margin 20px
-    .created_at
-        display none
-    .title
-        font-weight bold
-        background-color #eee
-    .name
-        background-color #ffa
+  width 770px
+
+#nav
+  background-image url('../images/Fractal_1.jpg')
+  background-size 100% 100%
+  height 250px
+  padding 20px
+  opacity 0.7
+
+ul
+	padding 0
+	margin 0
+	list-style-type none
+	text-align center
+
+li
+	display inline
+
+#nav a 
+	color #FFF 
+	padding-right 20px
+	text-decoration underline
+
+#sort a, #footer a
+	text-decoration underline
+
+#footer
+	margin-top 150p
+
+#footer .memorybox
+	background-color #456069
+
+#footer a, #footer
+	color #FFF
+
+#memories
+  text-align left
+
+.memorybox
+	background #FFF
+	padding 15px
+	margin 30px 0 0 0
+	//border-radius 8px
+
+.memorybox .title
+	font-size 24px
+
+#memories .memorybox:hover {
+	text-decoration underline !important
+}
+
+video 
+  position: absolute
+  top: 0
+  left: 0
+  width: 100% !important
+  height: auto
+
+canvas 
+  position: absolute

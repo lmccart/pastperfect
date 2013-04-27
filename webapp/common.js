@@ -57,6 +57,176 @@ mongo.findAll = function(callback) {
   });
 };
 
+start = function() {
+		// open mongo connect
+	mongo.open(function(err, p_client) {
+	  if (err) { throw err; }
+	  console.log('mongo open');
+	  mongo.authenticate(config.mongo.user, config.mongo.pass, function (err, replies) {
+			// You are now connected and authenticated.
+			console.log('mongo authenticated');
+
+			mongo.collection('memories', function(e, c) {	
+				
+			  c.remove({},function(rerr, removed){
+
+					console.log("mongo cleared");
+					c.insert([
+						{
+							title: "I will never forget this day and shall treasure it as long as I live.",
+							name: "Margaret",
+							video: "margaret_storyboard.mp4",
+							date: "May 8, 2004",
+							viz: "margaret-viz.mp4",
+							joy: 0.2,
+							sorrow: 0.4
+						},
+
+						{
+							title: "However, the reality is just now sinking in and I am just now starting to grieve.",
+							name: "Sam",
+							video: "margaret_storyboard.mp4",
+							viz: "margaret-viz.mp4",
+							date: "May 8, 2004",
+							joy: 0.2,
+							sorrow: 0.4
+						},
+
+						{
+							title: "I crawled into my bed and watched 2 cycles of SportsCenter before finally falling asleep.",
+							name: "John",
+							video: "margaret_storyboard.mp4",
+							viz: "margaret-viz.mp4",
+							date: "May 8, 2004",
+							joy: 0.2,
+							sorrow: 0.4
+						},
+
+						{
+							title: "I quickly settled into my room to get some much needed rest, as I had plenty of more to see and do in the days to come.",
+							name: "Eureka",
+							video: "margaret_storyboard.mp4",
+							viz: "margaret-viz.mp4",
+							date: "May 8, 2004",
+							joy: 0.2,
+							sorrow: 0.4
+						},
+												{
+							title: "I will never forget this day and shall treasure it as long as I live.",
+							name: "Margaret",
+							video: "margaret_storyboard.mp4",
+							viz: "margaret-viz.mp4",
+							joy: 0.2,
+							sorrow: 0.4
+						},
+
+						{
+							title: "However, the reality is just now sinking in and I am just now starting to grieve.",
+							name: "Sam",
+							video: "margaret_storyboard.mp4",
+							viz: "margaret-viz.mp4",
+							joy: 0.2,
+							sorrow: 0.4
+						},
+
+						{
+							title: "I crawled into my bed and watched 2 cycles of SportsCenter before finally falling asleep.",
+							name: "John",
+							video: "margaret_storyboard.mp4",
+							viz: "margaret-viz.mp4",
+							joy: 0.2,
+							sorrow: 0.4
+						},
+
+						{
+							title: "I quickly settled into my room to get some much needed rest, as I had plenty of more to see and do in the days to come.",
+							name: "Eureka",
+							video: "margaret_storyboard.mp4",
+							viz: "margaret-viz.mp4",
+							joy: 0.2,
+							sorrow: 0.4
+						},
+												{
+							title: "I will never forget this day and shall treasure it as long as I live.",
+							name: "Margaret",
+							video: "margaret_storyboard.mp4",
+							viz: "margaret-viz.mp4",
+							joy: 0.2,
+							sorrow: 0.4
+						},
+
+						{
+							title: "However, the reality is just now sinking in and I am just now starting to grieve.",
+							name: "Sam",
+							video: "margaret_storyboard.mp4",
+							viz: "margaret-viz.mp4",
+							joy: 0.2,
+							sorrow: 0.4
+						},
+
+						{
+							title: "I crawled into my bed and watched 2 cycles of SportsCenter before finally falling asleep.",
+							name: "John",
+							video: "margaret_storyboard.mp4",
+							viz: "margaret-viz.mp4",
+							joy: 0.2,
+							sorrow: 0.4
+						},
+
+						{
+							title: "I quickly settled into my room to get some much needed rest, as I had plenty of more to see and do in the days to come.",
+							name: "Eureka",
+							video: "margaret_storyboard.mp4",
+							viz: "margaret-viz.mp4",
+							joy: 0.2,
+							sorrow: 0.4
+						},
+												{
+							title: "I will never forget this day and shall treasure it as long as I live.",
+							name: "Margaret",
+							video: "margaret_storyboard.mp4",
+							viz: "margaret-viz.mp4",
+							joy: 0.2,
+							sorrow: 0.4
+						},
+
+						{
+							title: "However, the reality is just now sinking in and I am just now starting to grieve.",
+							name: "Sam",
+							video: "margaret_storyboard.mp4",
+							viz: "margaret-viz.mp4",
+							joy: 0.2,
+							sorrow: 0.4
+						},
+
+						{
+							title: "I crawled into my bed and watched 2 cycles of SportsCenter before finally falling asleep.",
+							name: "John",
+							video: "margaret_storyboard.mp4",
+							viz: "margaret-viz.mp4",
+							joy: 0.2,
+							sorrow: 0.4
+						},
+
+						{
+							title: "I quickly settled into my room to get some much needed rest, as I had plenty of more to see and do in the days to come.",
+							name: "Eureka",
+							video: "margaret_storyboard.mp4",
+							viz: "margaret-viz.mp4",
+							joy: 0.2,
+							sorrow: 0.4
+						}
+					], function(ierr, inserted) {
+						console.log("mongo EVERYTING INSERTED!");
+
+					});
+			  });
+			});
+		});
+	});
+}
+
+start();
 
 // Exports
 module.exports = {

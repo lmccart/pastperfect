@@ -1,7 +1,28 @@
 doctype 5
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+	head
+		title= "Past Perfect | "+title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		script(type='text/javascript', src='/javascripts/jquery-1.9.1.min.js')
+		script(type='text/javascript', src='/javascripts/jquery-seeThru.min.js')
+		script(type='text/javascript')
+			$(document).ready(function(){
+				$('#viz').seeThru();
+			});
+	body
+		div#container
+			div#nav
+				ul
+					li
+						a(href="/")!= "Home"
+					li
+						a(href="/about")!= "About"
+					li
+						a(href="/consultation")!= "Consultation"
+					h1= "Past Perfect"
+			block content
+
+			div#footer
+				div.memorybox
+					&#169;&nbsp;
+					a(href="/")!="Past Perfect, Inc."

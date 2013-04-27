@@ -1,9 +1,26 @@
 extends layout
 
 block content
-    h1= title
-    #memories
-        - each memory in memories
-          div.memory
-            div.title= memory.title 
-        a(href="/memory/new")!= "Add New Memory"
+	#sort
+		div.memorybox
+			div.memory
+				div.name= "sort by:"
+					&nbsp;&nbsp;&nbsp;
+					a(href="/joy")!="joy"
+					&nbsp;&nbsp;&nbsp;
+					a(href="/joy")!="sorrow"
+					&nbsp;&nbsp;&nbsp;
+					a(href="/joy")!="anger"
+					&nbsp;&nbsp;&nbsp;
+					a(href="/joy")!="rage"
+
+	#memories
+		if memories
+			- each memory in memories
+				a(href="/memory/"+memory.name)
+					div.memorybox
+						div.memory
+							div.title= '"'+memory.title+'"'
+							br
+							div.name= memory.name+" -- "+memory.date
+

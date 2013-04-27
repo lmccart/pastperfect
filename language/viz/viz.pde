@@ -39,10 +39,21 @@ void draw() {
     if (counter >= nextFrame) {
       curStat++;
     } 
-    background(175, 189, 255);
+
+    noSmooth();
+    background(0);
+    fill(255, 255);
     playStat(stats[curStat]);
+
+    translate(0, height/2);
+    
+    smooth();
+    fill(255, 180);
+    playStat(stats[curStat]);
+
     counter++;
-  } else {
+  } 
+  else {
     background(0);
   }
 
@@ -54,9 +65,9 @@ void playStat(XML s) {
   float w = (width - 2*border)/qualities.length;
   for (int i=0; i<qualities.length; i++) {
     float h = map(parseFloat(s.getChild(qualities[i]).getContent()), -maxVals[i], maxVals[i], -height+2*border, height-2*border);
-    vals[i] = max(vals[i], 10);
+    vals[i] = constrain(vals[i], 10, height*0.5-2*border);
     vals[i] += (h - vals[i])*easing;
-    rect(border+i*(w+1), height-border-vals[i], w, vals[i]);
+    rect(border+i*(w+1), 0.5*height-border-vals[i], w, vals[i]);
   }
 }
 

@@ -33,17 +33,7 @@ if ('development' == app.get('env')) {
 //app.get('/', routes.index);
 app.get('/users', user.list);
 
-// open mongo connect
-common.mongo.open(function(err, p_client) {
-  if (err) { throw err; }
-  console.log('mongo open');
-  common.mongo.authenticate(common.config.mongo.user, common.config.mongo.pass, function (err, replies) {
-    // You are now connected and authenticated.
-    console.log('mongo authenticated');
-    
-  });
-});
-	
+
 //Routes
 
 app.get('/', function(req, res){
@@ -52,6 +42,29 @@ app.get('/', function(req, res){
     	title: 'Memories',
       memories: mems
     });
+  });
+});
+
+
+app.get('/about', function(req, res){
+  common.mongo.findAll(function(error, mems){
+    res.render('about', {
+    	title: 'About',
+    });
+  });
+});
+
+app.get('/memory/:id', function(req, res){
+	console.log("hi");
+	common.mongo.collection('memories', function(e, c) {	
+		c.findOne({name: req.params.id}, function(err, doc) {
+	    if (doc) {
+		    res.render('memory', {
+		    	title: req.params.id,
+		      memory: doc
+		    });
+		  }
+		});
   });
 });
 

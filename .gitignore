@@ -1,1 +1,8 @@
-webapp/config*
+.DS_Store
+webapp/config.json
+webapp/config_prod.json
+language/viz/frames/*
+*.mp4
+*.mov
+webapp/node_modules/*
+jquery-seeThru/*
