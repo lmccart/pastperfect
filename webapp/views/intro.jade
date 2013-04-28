@@ -1,0 +1,19 @@
+extends layout
+
+block content
+
+	#mainContainer
+		#intro
+
+			video#day(autoplay=true)
+				source(src="../memories/PastPerfect_intro_Final.mov", type='video/mp4')
+
+			a(href="/archive")
+				div#archive-button
+						div.title= "Visit the Archive"
+
+
+	a(href="/archive") 
+		div#logo-shadow
+			div#logo
+				h1= "Past Perfect"

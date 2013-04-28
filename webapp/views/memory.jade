@@ -5,15 +5,16 @@ extends layout
 
 block content
 	#memory
-		a(href="/memory/"+memory.name)!= memory.name
 		if memory.video
 			div.video= "video: " + memory.video
 			video#day(autoplay=true)
 				source(src="../memories/"+memory.video, type='video/mp4')
 		else if memory.audio
-			div.colors
+			#colors
+			audio(autoplay=true)
+				source(src="../memories/"+memory.audio, type="audio/wav")
 
-	a(href="/") 
+	a(href="/archive") 
 		div#logo-shadow
 			div#logo
 				h1= "Past Perfect"

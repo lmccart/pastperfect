@@ -2,8 +2,8 @@ extends layout
 
 block content
 
+	include nav
 	#mainContainer
-		include nav
 		#container
 
 			#memories
@@ -18,5 +18,9 @@ block content
 									br
 									if memory.subtitle
 										div.subtitle= memory.subtitle
-
+					if memories.length < 2
+						#spacer
+				else
+					#spacer
+					
 			include footer

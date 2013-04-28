@@ -3,10 +3,15 @@
 		a(href="/joy")!="Schedule a Consultation"
 	.emotion.menubox
 		//a(href="/joy")!="Joyous Memories"	
-		#drop
-			ul
-				li
-					a(href="/memory/")!= "ok"
-					ul
-						li
-							a(href="/memory/")!= "ok"
+		#drop="View memories containing"
+			div.choose(data-dropdown="#dropdown-1")!=emotion
+			#dropdown-1.dropdown.dropdown-tip
+				ul.dropdown-menu
+					li
+						a(href="/archive")!= "anything"
+						a(href="/archive/sorrow")!= "sorrow"
+						a(href="/archive/joy")!= "joy"
+						a(href="/archive/sausage")!= "anger"
+						a(href="/archive/joy")!= "rage"
+						a(href="/archive/joy")!= "death"
+						a(href="/archive/joy")!= "sorrow"

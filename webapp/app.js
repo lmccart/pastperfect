@@ -36,11 +36,33 @@ app.get('/users', user.list);
 
 //Routes
 
+
 app.get('/', function(req, res){
+  res.render('intro', {
+  });
+});
+
+
+app.get('/archive', function(req, res){
   common.mongo.findAll(function(error, mems){
     res.render('index', {
-    	title: 'Memories',
-      memories: mems
+      title: 'Memories',
+      memories: mems,
+      emotion: "anything"
+    });
+  });
+});
+
+
+app.get('/archive/:emotion', function(req, res){
+  common.mongo.collection('memories', function(e, c) {  
+    c.find({tags: req.params.emotion}).toArray(function(error, mems){
+      console.log(mems);
+      res.render('index', {
+      	title: 'Memories',
+        memories: mems,
+        emotion: req.params.emotion
+      });
     });
   });
 });
@@ -55,7 +77,6 @@ app.get('/about', function(req, res){
 });
 
 app.get('/memory/:id', function(req, res){
-	console.log("hi");
 	common.mongo.collection('memories', function(e, c) {	
 		c.findOne({name: req.params.id}, function(err, doc) {
 	    if (doc) {

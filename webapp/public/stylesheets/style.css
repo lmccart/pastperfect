@@ -17,18 +17,45 @@ h1 {
   text-shadow: 0 0 20px #fff;
   text-align: center;
   margin: 0;
-  padding: 50px;
+  padding-top: 50px;
+}
+h1 a {
+  text-decoration: none !important;
+}
+h2 {
+  font-size: 20px;
+  font-weight: normal;
+  font-style: italic;
+  color: #fff;
+  text-shadow: 0 0 20px #fff;
+  text-align: center;
+  margin-left: 270px;
 }
 #mainContainer {
   background: -webkit-gradient(linear, 0% 0%, 0% 60%, from(#fff), to(#6f6767));
 }
 #container,
-#nav,
-#nav-shadow,
 #logo-shadow {
   margin-left: auto;
   margin-right: auto;
   width: 770px;
+}
+#intro {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#6f6767));
+}
+#archive-button {
+  background: -webkit-linear-gradient(#a3a3a3, #878787);
+  font-size: 30px;
+  text-shadow: 0 0 20px #fff;
+  color: #fff;
+  text-align: center;
+  padding: 30px 0;
+  width: 400px;
+  margin: 200px auto;
+  -webkit-box-shadow: 0 0 30px 5px #999;
 }
 #nav-shadow {
   -webkit-box-shadow: 0 0 30px 5px #999;
@@ -36,8 +63,7 @@ h1 {
 #nav {
   background-image: url("../images/Fractal_1.jpg");
   background-size: 100% 100%;
-  height: 250px;
-  padding-top: 25px;
+  height: 220px;
 }
 #nav a {
   color: #fff;
@@ -60,10 +86,16 @@ h1 {
   background: #fff;
   color: #000;
   width: 490px;
-  background: -webkit-linear-gradient(#fff, #a3a3a3);
+  background: -webkit-linear-gradient(#9f9f9f, #777);
+}
+.choose {
+  margin-top: 15px;
+  padding: 5px;
+  background-color: #c0c0c0;
+  cursor: pointer;
 }
 #consult {
-  background: -webkit-linear-gradient(#a3a3a3, #878787);
+  background: -webkit-linear-gradient(#2f88c4, #3b71c2);
   font-size: 30px;
   text-shadow: 0 0 20px #fff;
   width: 170px;
@@ -76,8 +108,11 @@ h1 {
 #footer a {
   text-decoration: underline;
 }
+#spacer {
+  height: 500px;
+}
 #footer {
-  margin-top: 150 p;
+  margin-top: 50px;
 }
 #footer .memorybox {
   background-color: #456069;
@@ -114,6 +149,33 @@ h1 {
 #logo .memorybox {
   margin: 0;
   padding: 0;
+}
+#colors {
+  background: #f00;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: colorcycle 60s linear 0s infinite alternate;
+  -webkit-animation: colorcycle 60s linear 0s infinite alternate;
+}
+@-webkit-keyframes colorcycle {
+  0% {
+    background: #6969f5;
+  }
+
+  25% {
+    background: #8c81a6;
+  }
+
+  50% {
+    background: #54ba85;
+  }
+
+  100% {
+    background: #7514a6;
+  }
 }
 video {
   position: absolute;

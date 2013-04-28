@@ -76,7 +76,8 @@ start = function() {
 							title: "“Maybe there really are all these angels in here”",
 							subtitle: "The Day of Conversations and Light",
 							name: "Margaret",
-							video: "Margaret_final_720p.mov"
+							video: "Margaret_final_720p.mov",
+							tags: ["sorrow", "joy"]
 						},
 
 						{
@@ -89,25 +90,25 @@ start = function() {
 							title: "“So that was a little awkward”",
 							subtitle: "The Day My Girlfriend Turned 21",
 							name: "girlfriend",
-							audio: "Girlfriend_turned2_final.aif"
-						},
-						{
-							title: "“I had only seen pictures”",
-							subtitle: "I Day I Saw the Ocean",
-							video: "margaret_storyboard.mp4",
-							viz: "margaret-viz.mp4"
-						},
-						{
-							title: "“Something was obviously wrong with this situation”",
-							subtitle: "The Day I Left My Husband",
-							video: "margaret_storyboard.mp4",
-							viz: "margaret-viz.mp4"
+							audio: "Girlfriend_turned2_final.wav"
 						},
 						{ 
 							title: "“The reality is just now sinking in...”",
 							subtitle: "Grandparents' Day",
-							video: "margaret_storyboard.mp4",
-							viz: "margaret-viz.mp4"
+							name: "grandparents",
+							audio: "Grandparents_day_final_1-2.wav",
+							tag: ["word1", "tag1"]
+						},
+						{
+							title: "“Something was obviously wrong with this situation”",
+							subtitle: "The Day I Left My Husband",
+							name: "husband",
+							audio: "TheDayILeftMyHusband_1-2.wav"
+						},
+						{
+							title: "“I had only seen pictures”",
+							subtitle: "I Day I Saw the Ocean",
+							video: "margaret_storyboard.mp4"
 						},
 						{
 							title: "The Day in Atlanta",
