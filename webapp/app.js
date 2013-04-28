@@ -39,6 +39,7 @@ app.get('/users', user.list);
 
 app.get('/', function(req, res){
   res.render('intro', {
+    title: "Intro"
   });
 });
 
@@ -48,7 +49,7 @@ app.get('/archive', function(req, res){
     res.render('index', {
       title: 'Memories',
       memories: mems,
-      emotion: "anything"
+      emotion: "Anything"
     });
   });
 });
@@ -56,7 +57,7 @@ app.get('/archive', function(req, res){
 
 app.get('/archive/:emotion', function(req, res){
   common.mongo.collection('memories', function(e, c) {  
-    c.find({tags: req.params.emotion}).toArray(function(error, mems){
+    c.find({tag: req.params.emotion}).toArray(function(error, mems){
       console.log(mems);
       res.render('index', {
       	title: 'Memories',
@@ -68,10 +69,10 @@ app.get('/archive/:emotion', function(req, res){
 });
 
 
-app.get('/about', function(req, res){
+app.get('/consultation', function(req, res){
   common.mongo.findAll(function(error, mems){
-    res.render('about', {
-    	title: 'About',
+    res.render('consultation', {
+    	title: 'Consultation',
     });
   });
 });

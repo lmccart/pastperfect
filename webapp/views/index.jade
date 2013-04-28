@@ -18,9 +18,15 @@ block content
 									br
 									if memory.subtitle
 										div.subtitle= memory.subtitle
+									if memory.video
+										img.eye.icon(src='/images/eye.png')
+									else if memory.audio
+										img.icon(src='/images/audio.png')
+									else
+										img.icon(src='/images/text.png')
 					if memories.length < 2
 						#spacer
 				else
 					#spacer
-					
+
 			include footer

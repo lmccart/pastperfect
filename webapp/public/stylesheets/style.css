@@ -19,6 +19,9 @@ h1 {
   margin: 0;
   padding-top: 50px;
 }
+h1:hover {
+  text-shadow: 0 0 30px #fff;
+}
 h1 a {
   text-decoration: none !important;
 }
@@ -47,7 +50,8 @@ h2 {
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#6f6767));
 }
 #archive-button {
-  background: -webkit-linear-gradient(#a3a3a3, #878787);
+  background: -webkit-linear-gradient(#2f88c4, #3b71c2);
+  -webkit-box-shadow: 0 0 30px 5px #999;
   font-size: 30px;
   text-shadow: 0 0 20px #fff;
   color: #fff;
@@ -55,7 +59,6 @@ h2 {
   padding: 30px 0;
   width: 400px;
   margin: 200px auto;
-  -webkit-box-shadow: 0 0 30px 5px #999;
 }
 #nav-shadow {
   -webkit-box-shadow: 0 0 30px 5px #999;
@@ -133,8 +136,46 @@ h2 {
 .memorybox .title {
   font-size: 24px;
 }
-#memories .memorybox:hover {
+#memories .memorybox:hover,
+#consultation a {
   text-decoration: underline !important;
+}
+.icon {
+  width: 20px;
+  float: right;
+  margin-top: -30px;
+}
+.eye {
+  width: 40px;
+  margin-top: -20px;
+}
+#legend {
+  position: absolute;
+  top: 808px;
+  left: 0;
+  font-size: 20px;
+  padding: 22px;
+}
+.red {
+  color: #a46767;
+}
+.yellow {
+  color: #dfd8a0;
+}
+.blue {
+  color: #909acb;
+}
+.green {
+  color: #739974;
+}
+.purple {
+  color: #83568a;
+}
+.orange {
+  color: #dba781;
+}
+.brown {
+  color: #9c948a;
 }
 #logo-shadow {
   width: 200px;
@@ -144,7 +185,7 @@ h2 {
 }
 #logo h1 {
   font-size: 30px;
-  padding: 15px;
+  padding: 20px;
 }
 #logo .memorybox {
   margin: 0;

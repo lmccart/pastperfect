@@ -1,0 +1,16 @@
+#menu 
+	#consult.menubox
+		a(href="/consultation")!="Schedule a Consultation"
+	.emotion.menubox
+		#drop="View memories containing"
+			div.choose(data-dropdown="#dropdown-1")!=emotion
+			#dropdown-1.dropdown.dropdown-tip
+				ul.dropdown-menu
+					li
+						a(href="/archive")!= "Anything"
+						a(href="/archive/Longing")!= "Longing"
+						a(href="/archive/Loneliness")!= "Loneliness"
+						a(href="/archive/Loss")!= "Loss"
+						a(href="/archive/Wonder")!= "Wonder"
+						a(href="/archive/Sadness")!= "Sadness"
+						a(href="/archive/Depression")!= "Depression"
