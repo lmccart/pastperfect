@@ -73,148 +73,99 @@ start = function() {
 					console.log("mongo cleared");
 					c.insert([
 						{
-							title: "I will never forget this day and shall treasure it as long as I live.",
+							title: "margaret title",
 							name: "Margaret",
 							video: "margaret_storyboard.mp4",
-							date: "May 8, 2004",
-							viz: "margaret-viz.mp4",
-							joy: 0.2,
-							sorrow: 0.4
+							viz: "margaret-viz.mp4"
 						},
 
 						{
-							title: "However, the reality is just now sinking in and I am just now starting to grieve.",
+							title: "sam title",
 							name: "Sam",
 							video: "margaret_storyboard.mp4",
-							viz: "margaret-viz.mp4",
-							date: "May 8, 2004",
-							joy: 0.2,
-							sorrow: 0.4
+							viz: "margaret-viz.mp4"
 						},
 
 						{
-							title: "I crawled into my bed and watched 2 cycles of SportsCenter before finally falling asleep.",
-							name: "John",
+							title: "The Day I Left My Husband",
 							video: "margaret_storyboard.mp4",
-							viz: "margaret-viz.mp4",
-							date: "May 8, 2004",
-							joy: 0.2,
-							sorrow: 0.4
+							viz: "margaret-viz.mp4"
 						},
 
 						{
-							title: "I quickly settled into my room to get some much needed rest, as I had plenty of more to see and do in the days to come.",
-							name: "Eureka",
+							title: "The Day in Atlanta",
 							video: "margaret_storyboard.mp4",
-							viz: "margaret-viz.mp4",
-							date: "May 8, 2004",
-							joy: 0.2,
-							sorrow: 0.4
+							viz: "margaret-viz.mp4"
 						},
-												{
-							title: "I will never forget this day and shall treasure it as long as I live.",
-							name: "Margaret",
-							video: "margaret_storyboard.mp4",
-							viz: "margaret-viz.mp4",
-							joy: 0.2,
-							sorrow: 0.4
-						},
-
 						{
-							title: "However, the reality is just now sinking in and I am just now starting to grieve.",
-							name: "Sam",
+							title: "The Day The Towers Went Down",
 							video: "margaret_storyboard.mp4",
-							viz: "margaret-viz.mp4",
-							joy: 0.2,
-							sorrow: 0.4
+							viz: "margaret-viz.mp4"
 						},
-
 						{
-							title: "I crawled into my bed and watched 2 cycles of SportsCenter before finally falling asleep.",
-							name: "John",
+							title: "The Day of Immolation",
 							video: "margaret_storyboard.mp4",
-							viz: "margaret-viz.mp4",
-							joy: 0.2,
-							sorrow: 0.4
+							viz: "margaret-viz.mp4"
 						},
-
 						{
-							title: "I quickly settled into my room to get some much needed rest, as I had plenty of more to see and do in the days to come.",
-							name: "Eureka",
+							title: "I Day I Saw The Ocean",
 							video: "margaret_storyboard.mp4",
-							viz: "margaret-viz.mp4",
-							joy: 0.2,
-							sorrow: 0.4
+							viz: "margaret-viz.mp4"
 						},
-												{
-							title: "I will never forget this day and shall treasure it as long as I live.",
-							name: "Margaret",
-							video: "margaret_storyboard.mp4",
-							viz: "margaret-viz.mp4",
-							joy: 0.2,
-							sorrow: 0.4
-						},
-
 						{
-							title: "However, the reality is just now sinking in and I am just now starting to grieve.",
-							name: "Sam",
+							title: "The Day I Left For My Backpacking Trip",
 							video: "margaret_storyboard.mp4",
-							viz: "margaret-viz.mp4",
-							joy: 0.2,
-							sorrow: 0.4
+							viz: "margaret-viz.mp4"
 						},
-
 						{
-							title: "I crawled into my bed and watched 2 cycles of SportsCenter before finally falling asleep.",
-							name: "John",
+							title: "The Day of the Driving Test",
 							video: "margaret_storyboard.mp4",
-							viz: "margaret-viz.mp4",
-							joy: 0.2,
-							sorrow: 0.4
+							viz: "margaret-viz.mp4"
 						},
-
 						{
-							title: "I quickly settled into my room to get some much needed rest, as I had plenty of more to see and do in the days to come.",
-							name: "Eureka",
+							title: "The Day of Great Surfing",
 							video: "margaret_storyboard.mp4",
-							viz: "margaret-viz.mp4",
-							joy: 0.2,
-							sorrow: 0.4
+							viz: "margaret-viz.mp4"
 						},
-												{
-							title: "I will never forget this day and shall treasure it as long as I live.",
-							name: "Margaret",
-							video: "margaret_storyboard.mp4",
-							viz: "margaret-viz.mp4",
-							joy: 0.2,
-							sorrow: 0.4
-						},
-
 						{
-							title: "However, the reality is just now sinking in and I am just now starting to grieve.",
-							name: "Sam",
+							title: "The Day I Became a Mom",
 							video: "margaret_storyboard.mp4",
-							viz: "margaret-viz.mp4",
-							joy: 0.2,
-							sorrow: 0.4
+							viz: "margaret-viz.mp4"
 						},
-
 						{
-							title: "I crawled into my bed and watched 2 cycles of SportsCenter before finally falling asleep.",
-							name: "John",
+							title: "The Day We Picked Up Thor",
 							video: "margaret_storyboard.mp4",
-							viz: "margaret-viz.mp4",
-							joy: 0.2,
-							sorrow: 0.4
+							viz: "margaret-viz.mp4"
 						},
-
 						{
-							title: "I quickly settled into my room to get some much needed rest, as I had plenty of more to see and do in the days to come.",
-							name: "Eureka",
+							title: "The Day He Left Us",
 							video: "margaret_storyboard.mp4",
-							viz: "margaret-viz.mp4",
-							joy: 0.2,
-							sorrow: 0.4
+							viz: "margaret-viz.mp4"
+						},
+						{
+							title: "The Day I Traveled to Vegas",
+							video: "margaret_storyboard.mp4",
+							viz: "margaret-viz.mp4"
+						},
+						{
+							title: "The Day of Graduation",
+							video: "margaret_storyboard.mp4",
+							viz: "margaret-viz.mp4"
+						},
+						{
+							title: "The Day of the Interview",
+							video: "margaret_storyboard.mp4",
+							viz: "margaret-viz.mp4"
+						},
+						{
+							title: "The Day My Girlfriend Turned 21",
+							video: "margaret_storyboard.mp4",
+							viz: "margaret-viz.mp4"
+						},
+						{
+							title: "The Day I Began Physical Therapy",
+							video: "margaret_storyboard.mp4",
+							viz: "margaret-viz.mp4"
 						}
 					], function(ierr, inserted) {
 						console.log("mongo EVERYTING INSERTED!");

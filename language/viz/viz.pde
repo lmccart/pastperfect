@@ -57,7 +57,7 @@ void draw() {
     background(0);
   }
 
-  saveFrame("frames/marg-######.png");
+  //saveFrame("frames/marg-######.png");
 }
 
 void playStat(XML s) {
