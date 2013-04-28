@@ -77,7 +77,7 @@ var StatsHandler = function(messages, db) {
 			// if fully calculated, add message to queue
 			if (msg['calcs'].length === 0) {
 				messages.push(msg);
-				console.log(msg);
+				//console.log(msg);
 				this.xml += '<stat>';
 				for(var propt in msg){
 					this.xml += '<' + propt + '>' + msg[propt] + '</'+ propt +'>';

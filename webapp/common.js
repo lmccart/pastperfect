@@ -73,25 +73,42 @@ start = function() {
 					console.log("mongo cleared");
 					c.insert([
 						{
-							title: "margaret title",
+							title: "“Maybe there really are all these angels in here”",
+							subtitle: "The Day of Conversations and Light",
 							name: "Margaret",
-							video: "margaret_storyboard.mp4",
-							viz: "margaret-viz.mp4"
+							video: "Margaret_final_720p.mov"
 						},
 
 						{
-							title: "sam title",
+							title: "“I don’t feel as isolated as I do most days”",
+							subtitle: "The Day Like a Lot of Others In My Still Semi-bohemian Life",
 							name: "Sam",
-							video: "margaret_storyboard.mp4",
-							viz: "margaret-viz.mp4"
+							video: "Sam_Final_Final_720.mp4"
 						},
-
 						{
-							title: "The Day I Left My Husband",
+							title: "“So that was a little awkward”",
+							subtitle: "The Day My Girlfriend Turned 21",
+							name: "girlfriend",
+							audio: "Girlfriend_turned2_final.aif"
+						},
+						{
+							title: "“I had only seen pictures”",
+							subtitle: "I Day I Saw the Ocean",
 							video: "margaret_storyboard.mp4",
 							viz: "margaret-viz.mp4"
 						},
-
+						{
+							title: "“Something was obviously wrong with this situation”",
+							subtitle: "The Day I Left My Husband",
+							video: "margaret_storyboard.mp4",
+							viz: "margaret-viz.mp4"
+						},
+						{ 
+							title: "“The reality is just now sinking in...”",
+							subtitle: "Grandparents' Day",
+							video: "margaret_storyboard.mp4",
+							viz: "margaret-viz.mp4"
+						},
 						{
 							title: "The Day in Atlanta",
 							video: "margaret_storyboard.mp4",
@@ -104,11 +121,6 @@ start = function() {
 						},
 						{
 							title: "The Day of Immolation",
-							video: "margaret_storyboard.mp4",
-							viz: "margaret-viz.mp4"
-						},
-						{
-							title: "I Day I Saw The Ocean",
 							video: "margaret_storyboard.mp4",
 							viz: "margaret-viz.mp4"
 						},
@@ -154,11 +166,6 @@ start = function() {
 						},
 						{
 							title: "The Day of the Interview",
-							video: "margaret_storyboard.mp4",
-							viz: "margaret-viz.mp4"
-						},
-						{
-							title: "The Day My Girlfriend Turned 21",
 							video: "margaret_storyboard.mp4",
 							viz: "margaret-viz.mp4"
 						},

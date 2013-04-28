@@ -8,6 +8,18 @@ html
 		script(type='text/javascript')
 			$(document).ready(function(){
 				$('#viz').seeThru();
+						
+				$('body').css('display', 'none');
+				//setTimeout(function() {$('body').fadeIn(1000);}, 1000);
+				$('body').fadeIn(1000);
+				$('a').click(function() {
+					event.preventDefault();
+					newLocation = this.href;
+					$('body').fadeOut(1000, newpage);
+				});
+				function newpage() {
+					window.location = newLocation;
+				}
 			});
 	body
 		block content

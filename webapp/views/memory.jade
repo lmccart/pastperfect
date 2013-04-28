@@ -5,15 +5,13 @@ extends layout
 
 block content
 	#memory
-		a(href="/memory/"+memory.title)!= memory.title
-		div.video= "video: " + memory.video
-		div.viz= "viz: " + memory.viz
-		div.joy= "joy: " + memory.joy 
-		div.joy= "sorrow: " + memory.sorrow 
-		video#day(autoplay=true)
-			source(src="../memories/"+memory.video, type='video/mp4')
-		video#viz(autoplay=false)
-			source(src="../memories/"+memory.viz, type='video/mp4')
+		a(href="/memory/"+memory.name)!= memory.name
+		if memory.video
+			div.video= "video: " + memory.video
+			video#day(autoplay=true)
+				source(src="../memories/"+memory.video, type='video/mp4')
+		else if memory.audio
+			div.colors
 
 	a(href="/") 
 		div#logo-shadow

@@ -1,29 +1,22 @@
 extends layout
 
 block content
-	include nav
-	#container
-		#sort
-			div.memorybox
-				div.memory
-					div.name= "sort by:"
-						&nbsp;&nbsp;&nbsp;
-						a(href="/joy")!="joy"
-						&nbsp;&nbsp;&nbsp;
-						a(href="/joy")!="sorrow"
-						&nbsp;&nbsp;&nbsp;
-						a(href="/joy")!="anger"
-						&nbsp;&nbsp;&nbsp;
-						a(href="/joy")!="rage"
 
-		#memories
-			if memories
-				- each memory in memories
-					a(href="/memory/"+memory.name)
-						div.memorybox
-							div.memory
-								div.title= memory.title
-								br
-								div.name= memory.name+" -- "+memory.date
+	#mainContainer
+		include nav
+		#container
 
-		include footer
+			#memories
+
+				include sidebar
+				if memories
+					- each memory in memories
+						a(href="/memory/"+memory.name)
+							div.memorybox
+								div.memory
+									div.title= memory.title
+									br
+									if memory.subtitle
+										div.subtitle= memory.subtitle
+
+			include footer
