@@ -11,6 +11,25 @@ var express = require('express')
 	, common = require('./common.js');
 
 
+
+if (common.aws) {
+  var AWS = require('aws-sdk');
+  var s3 = new AWS.S3();
+
+  AWS.config.update({accessKeyId: common.aws.accessKeyId, secretAccessKey: common.aws.secretAccessKey});
+  AWS.config.update({region: aws.config.region});
+
+  s3.createBucket({Bucket: 'pastperfect'}, function() {
+    var params = {Bucket: 'pastperfect', Key: 'myKey', Body: 'Hello!'};
+    s3.putObject(params, function(err, data) {
+      if (err)
+        console.log(err)
+      else
+        console.log("Successfully uploaded data to myBucket/myKey");
+    });
+  });
+}
+
 var app = express();
 
 // all environments

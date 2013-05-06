@@ -62,6 +62,7 @@ start = function() {
 	mongo.open(function(err, p_client) {
 	  if (err) { throw err; }
 	  console.log('mongo open');
+
 	  mongo.authenticate(config.mongo.user, config.mongo.pass, function (err, replies) {
 			// You are now connected and authenticated.
 			console.log('mongo authenticated');
@@ -82,7 +83,7 @@ start = function() {
 
 						{
 							title: "“I don’t feel as isolated as I do most days”",
-							subtitle: "The Day Like a Lot of Others In My Still Semi-bohemian Life",
+							subtitle: "The Day Like a Lot of Others In My Still Semi-Bohemian Life",
 							name: "Sam",
 							video: "Sam_Final_Final_720.mp4",
 							tag: ["Love", "Isolation", "Excitement", "Frustration" ]
