@@ -7,29 +7,38 @@ var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
   , http = require('http')
-  , path = require('path')
-	, common = require('./common.js');
+  , path = require('path');
+
+
+// Require the configuration file
+//var config = require(__dirname + "/config_prod.json");
+var config = (process.env.NODE_ENV == 'production') ? require(__dirname + "/config_prod.json") : require(__dirname + "/config.json");
+
+// Config mongo
+var Db = require('mongodb').Db;
+var MongoServer = require('mongodb').Server;
+var mongo = new Db(config.mongo.db, new MongoServer(config.mongo.host, config.mongo.port, {strict:true, auto_reconnect:true}), {w: 1});
 
 
 
-if (common.aws) {
-  var AWS = require('aws-sdk');
+/*
+var AWS = require('aws-sdk');
+
+if (config.aws) {
+  console.log('connecting to aws');
+  AWS.config.update({accessKeyId: config.aws.accessKeyId, secretAccessKey: config.aws.secretAccessKey});
+  AWS.config.update({region: config.aws.region});
+
   var s3 = new AWS.S3();
-
-  AWS.config.update({accessKeyId: common.aws.accessKeyId, secretAccessKey: common.aws.secretAccessKey});
-  AWS.config.update({region: aws.config.region});
-
-  s3.createBucket({Bucket: 'pastperfect'}, function() {
-    var params = {Bucket: 'pastperfect', Key: 'myKey', Body: 'Hello!'};
-    s3.putObject(params, function(err, data) {
-      if (err)
-        console.log(err)
-      else
-        console.log("Successfully uploaded data to myBucket/myKey");
-    });
+  s3.listBuckets(function(error, data) {
+    if (error) {
+      console.log(error); // error is Response.error
+    } else {
+      console.log(data); // data is Response.data
+    }
   });
 }
-
+*/
 var app = express();
 
 // all environments
@@ -53,6 +62,9 @@ if ('development' == app.get('env')) {
 app.get('/users', user.list);
 
 
+
+
+
 //Routes
 
 
@@ -64,18 +76,21 @@ app.get('/', function(req, res){
 
 
 app.get('/archive', function(req, res){
-  common.mongo.findAll(function(error, mems){
-    res.render('index', {
-      title: 'Memories',
-      memories: mems,
-      emotion: "Anything"
+  mongo.collection('memories', function(e, c) { 
+    c.find().toArray(function(error, mems){
+      if (error) console.log(error);
+      res.render('index', {
+        title: 'Memories',
+        memories: mems,
+        emotion: "[Sort by emotion]"
+      });
     });
   });
 });
 
 
 app.get('/archive/:emotion', function(req, res){
-  common.mongo.collection('memories', function(e, c) {  
+  mongo.collection('memories', function(e, c) {  
     c.find({tag: req.params.emotion}).toArray(function(error, mems){
       console.log(mems);
       res.render('index', {
@@ -89,23 +104,40 @@ app.get('/archive/:emotion', function(req, res){
 
 
 app.get('/consultation', function(req, res){
-  common.mongo.findAll(function(error, mems){
-    res.render('consultation', {
-    	title: 'Consultation',
-    });
+  res.render('consultation', {
+  	title: 'Consultation',
   });
 });
 
 app.get('/memory/:id', function(req, res){
-	common.mongo.collection('memories', function(e, c) {	
-		c.findOne({name: req.params.id}, function(err, doc) {
-	    if (doc) {
-		    res.render('memory', {
-		    	title: req.params.id,
-		      memory: doc
-		    });
-		  }
-		});
+  if(req.params.id != "undefined") {
+  	mongo.collection('memories', function(e, c) {	
+  		c.findOne({name: req.params.id}, function(err, doc) {
+  	    if (doc) {
+  		    res.render('memory', {
+  		    	title: req.params.id,
+  		      memory: doc
+  		    });
+  		  }
+  		});
+    });
+  } else {
+    res.render('memory', {
+      title: "Coming soon",
+      memory: {}
+    });
+  }
+});
+
+
+  // open mongo connect
+mongo.open(function(err, p_client) {
+  if (err) { throw err; }
+  console.log('mongo open '+config.mongo.user+' '+config.mongo.pass);
+
+  mongo.authenticate(config.mongo.user, config.mongo.pass, function (err, replies) {
+    // You are now connected and authenticated.
+    console.log('mongo authenticated');
   });
 });
 

@@ -1,6 +1,6 @@
 {
   "name": "pastperfect",
-  "version": "0.0.1-11",
+  "version": "0.0.1-39",
   "private": true,
   "scripts": {
     "start": "node app.js"
@@ -10,14 +10,15 @@
     "jade": "*",
     "stylus": "*",
     "mongodb": "*",
-    "aws-sdk": "0.9.9"
+    "aws-sdk": "1.0.0"
   },
   "subdomain": "pastperfect",
+  "domains": [
+    "pastperfect.us",
+    "www.pastperfect.us",
+    "*.pastperfect.us"
+  ],
   "engines": {
     "node": "0.8.x"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/lmccart/pastperfect.git"
   }
 }

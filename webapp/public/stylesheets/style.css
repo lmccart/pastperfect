@@ -4,20 +4,19 @@ body {
   text-align: left;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 15px;
-  color: #606060;
+  color: #fff;
 }
 a {
   color: #606060;
   text-decoration: none;
 }
 h1 {
-  font-size: 70px;
+  font-size: 30px;
+  padding: 20px 20px 10px 20px;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
   font-weight: normal;
-  color: #fff;
-  text-shadow: 0 0 20px #fff;
-  text-align: center;
   margin: 0;
-  padding-top: 50px;
 }
 h1:hover {
   text-shadow: 0 0 30px #fff;
@@ -25,17 +24,15 @@ h1:hover {
 h1 a {
   text-decoration: none !important;
 }
-h2 {
+h1 subtitle {
   font-size: 20px;
-  font-weight: normal;
+  margin: 0;
+  padding-left: 12px;
   font-style: italic;
-  color: #fff;
-  text-shadow: 0 0 20px #fff;
-  text-align: center;
-  margin-left: 270px;
+  font-weight: 100;
 }
 #mainContainer {
-  background: -webkit-gradient(linear, 0% 0%, 0% 60%, from(#fff), to(#6f6767));
+  background: -webkit-gradient(linear, 0% 0%, 0% 60%, from(#fff), to(#adadad));
 }
 #container,
 #logo-shadow {
@@ -47,11 +44,11 @@ h2 {
   width: 100%;
   height: 100%;
   position: absolute;
-  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#6f6767));
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#adadad));
 }
 #archive-button {
   background: -webkit-linear-gradient(#2f88c4, #3b71c2);
-  -webkit-box-shadow: 0 0 30px 5px #999;
+  -webkit-box-shadow: 0 0 30px 5px #bababa;
   font-size: 30px;
   text-shadow: 0 0 20px #fff;
   color: #fff;
@@ -61,16 +58,16 @@ h2 {
   margin: 200px auto;
 }
 #nav-shadow {
-  -webkit-box-shadow: 0 0 30px 5px #999;
+  -webkit-box-shadow: 0 0 30px 5px #bababa;
 }
 #nav {
-  background-image: url("../images/Fractal_1.jpg");
+  background-image: url("../images/Fractal_Bright.jpg");
   background-size: 100% 100%;
-  height: 220px;
 }
 #nav a {
   color: #fff;
-  padding-right: 20px;
+}
+#nav a padding-right 20px {
   text-decoration: underline;
 }
 #menu {
@@ -83,7 +80,10 @@ h2 {
   float: left;
   width: 160px;
   padding: 20px;
-  -webkit-box-shadow: 0 0 30px 5px #999;
+  -webkit-box-shadow: 0 0 30px 5px #bababa;
+}
+#drop {
+  color: #fff !important;
 }
 .emotion {
   background: #fff;
@@ -98,27 +98,28 @@ h2 {
   cursor: pointer;
 }
 #consult {
-  background: -webkit-linear-gradient(#2f88c4, #3b71c2);
+  background: #75a6fa;
   font-size: 30px;
-  text-shadow: 0 0 20px #fff;
   width: 170px;
   margin-right: 30px;
+  text-shadow: 0 0 20px #bbd3fc;
 }
 #consult a {
   color: #fff !important;
 }
+#consult:hover {
+  text-shadow: 0 0 20px #fff;
+}
 #sort a,
-#footer a {
+#footer a,
+#memory a {
   text-decoration: underline;
 }
 #spacer {
-  height: 500px;
+  height: 700px;
 }
 #footer {
-  margin-top: 50px;
-}
-#footer .memorybox {
-  background-color: #456069;
+  padding: 50px 0;
 }
 #footer a,
 #footer {
@@ -131,9 +132,14 @@ h2 {
   background: #fff;
   padding: 15px;
   margin: 30px 0 0 0;
-  -webkit-box-shadow: 0 0 30px 5px #999;
+  -webkit-box-shadow: 0 0 30px 5px #bababa;
+}
+.memory {
+  color: #606060;
+  line-height: 24px;
 }
 .memorybox .title {
+  padding: 10px 0px;
   font-size: 24px;
 }
 #memories .memorybox:hover,
@@ -231,4 +237,9 @@ canvas {
   top: 80%;
   width: 100%;
   height: 20%;
+}
+.loading {
+  padding: 100px 20px;
+  font-size: 30px;
+  color: #606060;
 }
