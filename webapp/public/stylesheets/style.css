@@ -205,6 +205,10 @@ h1 subtitle {
   top: 0;
   left: 0;
 }
+#logo {
+  color: #fff;
+  opacity: 0.5;
+}
 #logo h1 {
   font-size: 30px;
   padding: 20px;

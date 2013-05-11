@@ -10,7 +10,6 @@ html
 		script(type='text/javascript', src='/javascripts/jquery-seeThru.min.js')
 		script(type='text/javascript')
 			$(document).ready(function(){
-				$('#viz').seeThru();
 						
 				$('body').css('display', 'none');
 				//setTimeout(function() {$('body').fadeIn(1000);}, 1000);
@@ -18,15 +17,17 @@ html
 				$('a').click(function() {
 					event.preventDefault();
 					newLocation = this.href;
-					$('body').fadeOut(1000, newpage);
+					$('body').fadeOut(1000, function(){newpage(newLocation);});
 				});
-				function newpage() {
-					window.location = newLocation;
-				}
 
 				$('video').bind("ended", function() {
-					$('video').fadeOut();
+
+					$('body').fadeOut(1000, function(){newpage('archive');});
 				});
+
+				function newpage(loc) {
+					window.location = loc;
+				}
 			});
 	body
 		block content
