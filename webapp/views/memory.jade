@@ -30,7 +30,6 @@ block content
 					div.purple="Pride"
 					div.orange="Regret"
 					div.brown="Sorrow"
-
 	else
 
 		#mainContainer
@@ -41,9 +40,14 @@ block content
 				#consultation
 					div.memorybox
 						div.memory
-							p.title This memory is coming soon...
+							if memory.text
+								p.title= memory.title
+								p= memory.subtitle
+								p= memory.text
+							else
+								p.title This memory is coming soon...
 							a(href="/archive")!= "Back to the archive"
-							
+								
 					#spacer
 
 				include footer
