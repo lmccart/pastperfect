@@ -141,5 +141,15 @@ mongo.open(function(err, p_client) {
   });
 });
 
+function makeid()
+{
+    var text = "";
+    var possible = "0123456789";
+
+    for( var i=0; i < 5; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+}
 
 app.listen(3000);
