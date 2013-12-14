@@ -130,16 +130,16 @@ app.get('/', function(req, res){
 // });
 
 
-  // open mongo connect
-mongo.open(function(err, p_client) {
-  if (err) { throw err; }
-  console.log('mongo open '+process.env.MONGO_USER);
+//   // open mongo connect
+// mongo.open(function(err, p_client) {
+//   if (err) { throw err; }
+//   console.log('mongo open '+process.env.MONGO_USER);
 
-  mongo.authenticate(process.env.MONGO_USER, process.env.MONGO_PASS, function (err, replies) {
-    // You are now connected and authenticated.
-    console.log('mongo authenticated');
-  });
-});
+//   mongo.authenticate(process.env.MONGO_USER, process.env.MONGO_PASS, function (err, replies) {
+//     // You are now connected and authenticated.
+//     console.log('mongo authenticated');
+//   });
+// });
 
 function makeid()
 {
