@@ -10,14 +10,10 @@ var express = require('express')
   , path = require('path');
 
 
-// Require the configuration file
-//var config = require(__dirname + "/config_prod.json");
-var config = (process.env.NODE_ENV == 'production') ? require(__dirname + "/config_prod.json") : require(__dirname + "/config.json");
-
 // Config mongo
 var Db = require('mongodb').Db;
 var MongoServer = require('mongodb').Server;
-var mongo = new Db(config.mongo.db, new MongoServer(config.mongo.host, config.mongo.port, {strict:true, auto_reconnect:true}), {w: 1});
+var mongo = new Db(process.env.MONGO_USER, new MongoServer(process.env.MONGO_HOST, process.env.MONGO_PORT, {strict:true, auto_reconnect:true}), {w: 1});
 
 
 
@@ -26,8 +22,8 @@ var AWS = require('aws-sdk');
 
 if (config.aws) {
   console.log('connecting to aws');
-  AWS.config.update({accessKeyId: config.aws.accessKeyId, secretAccessKey: config.aws.secretAccessKey});
-  AWS.config.update({region: config.aws.region});
+  AWS.config.update({accessKeyId: process.env.AWS_aws.accessKeyId, secretAccessKey: process.env.AWS_aws.secretAccessKey});
+  AWS.config.update({region: process.env.AWS_aws.region});
 
   var s3 = new AWS.S3();
   s3.listBuckets(function(error, data) {
@@ -135,9 +131,9 @@ app.get('/memory/:id', function(req, res){
   // open mongo connect
 mongo.open(function(err, p_client) {
   if (err) { throw err; }
-  console.log('mongo open '+config.mongo.user+' '+config.mongo.pass);
+  console.log('mongo open '+process.env.MONGO_USER);
 
-  mongo.authenticate(config.mongo.user, config.mongo.pass, function (err, replies) {
+  mongo.authenticate(process.env.MONGO_NAME, process.env.MONGO_PASS, function (err, replies) {
     // You are now connected and authenticated.
     console.log('mongo authenticated');
   });

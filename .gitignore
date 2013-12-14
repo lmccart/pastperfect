@@ -1,5 +1,6 @@
 *.DS_Store
 config*
+*.env
 language/viz/frames/*
 *.mp4
 *.mov

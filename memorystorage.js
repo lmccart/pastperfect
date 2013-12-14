@@ -4,10 +4,6 @@ var Server = require('mongodb').Server;
 var BSON = require('mongodb').BSON;
 var ObjectID = require('mongodb').ObjectID;
 
-// Require the configuration file
-//var config = require(__dirname + "/config_prod.json");
-var config = (process.env.NODE_ENV == 'production') ? require(__dirname + "/config_prod.json") : require(__dirname + "/config.json");
-
 
 MemoryStorage = function() {
   this.db = new Db('memories', new Server(config.mongo.host, config.mongo.port, {strict:true, auto_reconnect:true}), {w: 1});
