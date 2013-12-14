@@ -29,7 +29,7 @@
 
 // Require the configuration file
 //var config = require(__dirname + "/config_prod.json");
-var config = (process.env.NODE_ENV == 'production') ? require(__dirname + "/config_prod.json") : require(__dirname + "/config.json");
+//var config = (process.env.NODE_ENV == 'production') ? require(__dirname + "/config_prod.json") : require(__dirname + "/config.json");
 
 // Config mongo
 var Db = require('mongodb').Db;
