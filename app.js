@@ -79,71 +79,71 @@ app.get('/', function(req, res){
 });
 
 
-// app.get('/archive', function(req, res){
-//   mongo.collection('memories', function(e, c) { 
-//     c.find().toArray(function(error, mems){
-//       if (error) console.log(error);
-//       res.render('index', {
-//         title: 'Memories',
-//         memories: mems,
-//         emotion: "[Sort by emotion]"
-//       });
-//     });
-//   });
-// });
+app.get('/archive', function(req, res){
+  mongo.collection('memories', function(e, c) { 
+    c.find().toArray(function(error, mems){
+      if (error) console.log(error);
+      res.render('index', {
+        title: 'Memories',
+        memories: mems,
+        emotion: "[Sort by emotion]"
+      });
+    });
+  });
+});
 
 
-// app.get('/archive/:emotion', function(req, res){
-//   mongo.collection('memories', function(e, c) {  
-//     c.find({tag: req.params.emotion}).toArray(function(error, mems){
-//       console.log(mems);
-//       res.render('index', {
-//       	title: 'Memories',
-//         memories: mems,
-//         emotion: req.params.emotion
-//       });
-//     });
-//   });
-// });
+app.get('/archive/:emotion', function(req, res){
+  mongo.collection('memories', function(e, c) {  
+    c.find({tag: req.params.emotion}).toArray(function(error, mems){
+      console.log(mems);
+      res.render('index', {
+      	title: 'Memories',
+        memories: mems,
+        emotion: req.params.emotion
+      });
+    });
+  });
+});
 
 
-// app.get('/consultation', function(req, res){
-//   res.render('consultation', {
-//   	title: 'Consultation',
-//   });
-// });
+app.get('/consultation', function(req, res){
+  res.render('consultation', {
+  	title: 'Consultation',
+  });
+});
 
-// app.get('/memory/:id', function(req, res){
-//   if(req.params.id != "undefined") {
-//   	mongo.collection('memories', function(e, c) {	
-//   		c.findOne({name: req.params.id}, function(err, doc) {
-//   	    if (doc) {
-//   		    res.render('memory', {
-//   		    	title: req.params.id,
-//   		      memory: doc
-//   		    });
-//   		  }
-//   		});
-//     });
-//   } else {
-//     res.render('memory', {
-//       title: "Coming soon",
-//       memory: {}
-//     });
-//   }
-// });
+app.get('/memory/:id', function(req, res){
+  if(req.params.id != "undefined") {
+  	mongo.collection('memories', function(e, c) {	
+  		c.findOne({name: req.params.id}, function(err, doc) {
+  	    if (doc) {
+  		    res.render('memory', {
+  		    	title: req.params.id,
+  		      memory: doc
+  		    });
+  		  }
+  		});
+    });
+  } else {
+    res.render('memory', {
+      title: "Coming soon",
+      memory: {}
+    });
+  }
+});
 
 
-//   // open mongo connect
-// mongo.open(function(err, p_client) {
-//   if (err) { throw err; }
-//   console.log('mongo open '+process.env.MONGO_USER);
+  // open mongo connect
+mongo.open(function(err, p_client) {
+  if (err) { throw err; }
+  console.log('mongo open '+process.env.MONGO_USER);
 
-//   mongo.authenticate(process.env.MONGO_USER, process.env.MONGO_PASS, function (err, replies) {
-//     // You are now connected and authenticated.
-//     console.log('mongo authenticated');
-//   });
-// });
+  mongo.authenticate(process.env.MONGO_USER, process.env.MONGO_PASS, function (err, replies) {
+    // You are now connected and authenticated.
+    console.log('mongo authenticated');
+  });
+});
 
 function makeid()
 {
