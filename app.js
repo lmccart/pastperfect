@@ -13,7 +13,7 @@ var express = require('express')
 // Config mongo
 var Db = require('mongodb').Db;
 var MongoServer = require('mongodb').Server;
-var mongo = new Db(process.env.MONGO_USER, new MongoServer(process.env.MONGO_HOST, process.env.MONGO_PORT, {strict:true, auto_reconnect:true}), {w: 1});
+var mongo = new Db(process.env.MONGO_NAME, new MongoServer(process.env.MONGO_HOST, process.env.MONGO_PORT, {strict:true, auto_reconnect:true}), {w: 1});
 
 
 
@@ -133,7 +133,7 @@ mongo.open(function(err, p_client) {
   if (err) { throw err; }
   console.log('mongo open '+process.env.MONGO_USER);
 
-  mongo.authenticate(process.env.MONGO_NAME, process.env.MONGO_PASS, function (err, replies) {
+  mongo.authenticate(process.env.MONGO_USER, process.env.MONGO_PASS, function (err, replies) {
     // You are now connected and authenticated.
     console.log('mongo authenticated');
   });
